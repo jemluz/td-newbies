@@ -81,3 +81,22 @@ color: var(--gray-200);
   margin-left: 8px;
   font-size: 22px;
 }
+
+/* -------------------- TASKS COUNTER BELOW ----------------- */
+
+.tasks_counter {
+  width: 46rem;
+  padding: 1.25rem 1rem;
+  margin: 48px auto;
+
+  border-top: 3px solid var(--gray-400);
+  border-bottom: 3px solid var(--gray-400);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .tasks_counter div {
+  width: 8.875rem;
+  display: flex;
+} */
