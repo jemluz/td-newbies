@@ -1,20 +1,21 @@
 :root {
-  --gray-100: #fff;
-  --gray-200: #d9d9d9;
+  --white: #fff;
+  --gray-100: #d9d9d9;
   --gray-200: #808080;
   --gray-300: #707070;
   --gray-400: #363636;
   --gray-500: #222222;
-  --gray-700: #1a1a1a;
+  --black: #1a1a1a;
 
   --blue-500: #4E6EDE;
+  --blue-600: #3756C5;
   --green-500: #26C277;
   --yellow-500: #FFD231;
 }
 
-/* :focus {
-  outline: transparent;
-} */
+:focus {
+  outline: var(--blue-500) solid 1px;
+}
 
 * {
   margin: 0;
@@ -26,7 +27,7 @@
 
 body {
   background: var(--gray-500);
-  color: var(--gray-100);
+  color: var(--white);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,7 +39,7 @@ button {
   font-size: 1rem;
 }
 
-/* input,
+input,
 button {
   border-radius: 8px;
   padding: 1rem;
@@ -47,4 +48,4 @@ button {
 input:hover,
 button:hover {
   cursor: pointer;
-} */
+}
