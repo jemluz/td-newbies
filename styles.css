@@ -148,3 +148,46 @@ color: var(--gray-200);
 .empty_tasks div p:first-child {
   font-weight: bold;
 }
+
+/* -------------------- TASKS LIST BELOW ----------------- */
+
+.tasks_list {
+  display: flex;
+  flex-direction: column;
+  max-width: 45rem;
+}
+
+/* -------------------- TASK BELOW ----------------- */
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--gray-350);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.task+.task {
+  margin-top: 1rem;
+}
+
+.task div {
+  display: flex;
+  align-items: center;
+}
+
+.task div i {
+  font-size: 28px;
+}
+
+.task div p {
+  margin: 0 .75rem;
+  color: var(--white);
+}
+
+.delete_btn {
+  font-size: 24px;
+  color: var(--gray-200);
+}

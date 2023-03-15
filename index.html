@@ -15,12 +15,20 @@
       rel="stylesheet"
     />
 
+    <!-- Phosphor Icons -->
     <link
       rel="stylesheet"
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.2/src/bold/style.css"
     />
 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css"
+    />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="styles.css" />
 
@@ -50,17 +58,29 @@
           </div>
         </section>
 
-        <section class="empty_tasks">
+        <!-- <section class="empty_tasks">
           <img src="./assets/empty-tasks.svg" alt="" />
           <div>
             <p>Você ainda não tem tarefas cadastradas</p>
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div>
-        </section>
+        </section> -->
 
-        <section className="tasks_list">
-          <div className="task">
-            <p>Dar banho nos gatos</p>
+        <section class="tasks_list">
+          <div class="task">
+            <div>
+              <i class="ph-duotone ph-circle-dashed check_btn"></i>
+              <p>Dar banho nos gatos</p>
+            </div>
+            <i class="ph-duotone ph-trash delete_btn"></i>
+          </div>
+
+          <div class="task">
+            <div>
+              <i class="ph-duotone ph-check-circle check_btn"></i>
+              <p class="risked">Dar banho nos gatos</p>
+            </div>
+            <i class="ph-duotone ph-trash delete_btn"></i>
           </div>
         </section>
       </main>
