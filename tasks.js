@@ -94,8 +94,15 @@ function taskComplete(event){
   const todoIcon = event.target;
   todoIcon.classList.add("hidden");
 
+  // this (icon) -> parentNode (.left_conteft) -> parentNode (.task .todo)
+  const taskToCompleteId = todoIcon.parentNode.parentNode.id;
+  const taskToComplete = document.getElementById(taskToCompleteId);
+
+  taskToComplete.classList.add("done");
+  taskToComplete.classList.remove("todo");
+
   // this (icon) -> parentNode (.left_conteft) -> doneIcon [1]
-  const doneIcon = todoIcon.parentNode.childNodes[3];
+  const doneIcon = todoIcon.parentNode.childNodes[1];
   doneIcon.classList.remove("hidden")
 }
 
@@ -106,8 +113,15 @@ function taskIncomplete(event) {
   const doneIcon = event.target;
   doneIcon.classList.add("hidden");
 
+  // this (icon) -> parentNode (.left_conteft) -> parentNode (.task .done)
+  const taskToIncompleteId = doneIcon.parentNode.parentNode.id;
+  const taskToIcomplete = document.getElementById(taskToIncompleteId);
+
+  taskToIcomplete.classList.add("todo");
+  taskToIcomplete.classList.remove("done");
+
   // this (icon) -> parentNode (.left_conteft) -> todoIcon [0]
-  const todoIcon = doneIcon.parentNode.childNodes[1];
+  const todoIcon = doneIcon.parentNode.childNodes[0];
   todoIcon.classList.remove("hidden")
 }
 
@@ -123,7 +137,16 @@ function deleteTask(event) {
   })
 
   tasksData = tasksWithoutDeletedOne;
-  // tasksList.removeChild(taskToDelete);
+  tasksList.removeChild(taskToDelete);
 }
 
 // sync HTML with tasksData list
+// for(let i = 0; i < tasksData.length; i++) {
+//   const taskItem = createNewTaskEl(tasksData[i].name, tasksData[i].id);
+//   tasksList.appendChild(taskItem);
+// }
+
+for (const task of tasksData) {
+  const taskItem = createNewTaskEl(task.name, task.id);
+  tasksList.appendChild(taskItem);
+}
