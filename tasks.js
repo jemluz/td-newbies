@@ -11,6 +11,10 @@ let tasksData = [
   }
 ];
 
+const addTaskInput = document.getElementById("task_input");
+const addTaskButton = document.getElementsByTagName("button")[0];
+const tasksList = document.getElementById("tasks_list");
+
 // new task
 
 // complete task
