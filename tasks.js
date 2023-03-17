@@ -19,6 +19,18 @@ let tasksData = [
 const addTaskInput = document.getElementById("task_input");
 const addTaskButton = document.getElementsByTagName("button")[0];
 const tasksList = document.getElementById("tasks_list");
+const emptyTasks = document.getElementById("empty_tasks");
+
+// displays empty message
+function verifyIfListIsEmpty() {
+  if (tasksData.length === 0) {
+    emptyTasks.classList.remove("hidden")
+  } else {
+    emptyTasks.classList.add("hidden")
+  }
+}
+
+verifyIfListIsEmpty();
 
 // new task item
 function createNewTaskEl(taskName, taskId) {
@@ -73,7 +85,7 @@ function addTask(event) {
 
   event.preventDefault();
 
-  const taskName = event.target.value;
+  const taskName = addTaskInput.value;
 
   const newTask = {
     id: uid(),
@@ -85,6 +97,8 @@ function addTask(event) {
 
   const taskElement = createNewTaskEl(newTask.name, newTask.id);
   tasksList.appendChild(taskElement);
+
+  verifyIfListIsEmpty();
 }
 
 // complete task
@@ -138,6 +152,8 @@ function deleteTask(event) {
 
   tasksData = tasksWithoutDeletedOne;
   tasksList.removeChild(taskToDelete);
+
+  verifyIfListIsEmpty();
 }
 
 // sync HTML with tasksData list
