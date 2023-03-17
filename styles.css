@@ -20,6 +20,19 @@
   }
 }
 
+html::-webkit-scrollbar {
+  width: 2px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--white);
+  border-radius: 99px;
+}
+
 /* -------------------- HEADER BELOW ----------------- */
 
 header {
