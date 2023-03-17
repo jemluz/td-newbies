@@ -42,7 +42,11 @@
 
       <main>
         <form class="new_task_form">
-          <input type="text" placeholder="Adicione uma nova tarefa" />
+          <input
+            id="task_input"
+            type="text"
+            placeholder="Adicione uma nova tarefa"
+          />
           <button type="submit">
             Criar <i class="ph-bold ph-plus-circle"></i>
           </button>
@@ -66,18 +70,11 @@
           </div>
         </section> -->
 
-        <section class="tasks_list">
+        <section id="tasks_list" class="tasks_list">
           <div class="task todo">
-            <div>
+            <div class="left_content">
               <i class="ph-duotone ph-circle-dashed check_btn"></i>
-              <p>Dar banho nos gatos</p>
-            </div>
-            <i class="ph-duotone ph-trash delete_btn"></i>
-          </div>
-
-          <div class="task done">
-            <div>
-              <i class="ph-duotone ph-check-circle check_btn"></i>
+              <i class="ph-duotone ph-check-circle check_btn hidden"></i>
               <p class="risked">Dar banho nos gatos</p>
             </div>
             <i class="ph-duotone ph-trash delete_btn"></i>
@@ -85,5 +82,8 @@
         </section>
       </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="tasks.js"></script>
   </body>
 </html>
