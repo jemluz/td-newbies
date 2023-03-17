@@ -47,12 +47,7 @@
             type="text"
             placeholder="Adicione uma nova tarefa"
           />
-          <button
-            type="submit"
-            onclick="{
-              console.log('Add Task');
-            }"
-          >
+          <button type="submit" onclick="addTask(event)">
             Criar <i class="ph-bold ph-plus-circle"></i>
           </button>
         </form>
@@ -81,25 +76,17 @@
             <div class="left_content">
               <i
                 class="ph-duotone ph-circle-dashed check_btn"
-                onclick="{
-                  console.log('Complete Task...');
-                  let algumaCoisa = 'asjdhkjasd'
-                  console.log(algumaCoisa)
-                }"
+                onclick="taskCompleted(event)"
               ></i>
               <i
                 class="ph-duotone ph-check-circle check_btn hidden"
-                onclick="{
-                  console.log('Incomplete Task...');
-                }"
+                onclick="taskIncomplete(event)"
               ></i>
               <p class="risked">Dar banho nos gatos</p>
             </div>
             <i
               class="ph-duotone ph-trash delete_btn"
-              onclick="{
-                console.log('Delete Task');
-              }"
+              onclick="deleteTask(event)"
             ></i>
           </div>
 
@@ -108,17 +95,17 @@
             <div class="left_content">
               <i
                 class="ph-duotone ph-circle-dashed check_btn hidden"
-                onclick="taskCompleted()"
+                onclick="taskCompleted(event)"
               ></i>
               <i
                 class="ph-duotone ph-check-circle check_btn"
-                onclick="taskIncomplete()"
+                onclick="taskIncomplete(event)"
               ></i>
               <p class="risked">Dar banho nos gatos</p>
             </div>
             <i
               class="ph-duotone ph-trash delete_btn"
-              onclick="deleteTask()"
+              onclick="deleteTask(event)"
             ></i>
           </div>
         </section>
