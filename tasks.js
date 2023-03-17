@@ -1,11 +1,16 @@
+// id generator
+function uid() {
+  return Date.now().toString(16) + Math.random().toString(16).substr(2);
+}
+
 let tasksData = [
   {
-    id: 1,
+    id: uid(),
     name: 'Ver se eu tô na esquina',
     toDo: true
   },
   {
-    id: 2,
+    id: uid(),
     name: 'Dar banho nos gatos',
     toDo: false
   }
@@ -15,9 +20,23 @@ const addTaskInput = document.getElementById("task_input");
 const addTaskButton = document.getElementsByTagName("button")[0];
 const tasksList = document.getElementById("tasks_list");
 
+
 // new task
 function addTask(event) {
   console.log('Add Task');
+
+  event.preventDefault();
+
+  const taskName = event.target.value;
+
+  const newTask = {
+    id: uid(),
+    name: taskName,
+    toDo: true
+  }
+
+  tasksData.push(newTask);
+  tasksList.appendChild(newTask);
 }
 
 // complete task
