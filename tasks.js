@@ -114,6 +114,16 @@ function taskIncomplete(event) {
 // delete task
 function deleteTask(event) {
   console.log('Delete Task');
+
+  const taskToDeleteId = event.target.parentNode.id;
+  const taskToDelete = document.getElementById(taskToDeleteId);
+
+  const tasksWithoutDeletedOne = tasksData.filter((task) => {
+    return task.id !== taskToDeleteId;
+  })
+
+  tasksData = tasksWithoutDeletedOne;
+  // tasksList.removeChild(taskToDelete);
 }
 
 // sync HTML with tasksData list
